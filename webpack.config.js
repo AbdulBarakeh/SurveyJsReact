@@ -5,7 +5,8 @@ module.exports = {
     "entry": "./src/index.js",
     "output": {
         "path": __dirname + '/dir',
-        "filename": "bundle.js"
+        "filename": "bundle.js",
+        "publicPath":'/'
     },
     "devtool": "source-map",
     "module": {
@@ -65,6 +66,9 @@ module.exports = {
                 ]
             }
         ]
+    },
+    devServer: {
+      historyApiFallback: true,
     },
     "plugins": [
         new HtmlWebPackPlugin({

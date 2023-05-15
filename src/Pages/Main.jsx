@@ -1,5 +1,7 @@
 import React from 'react';
-import Survey from '../Components/Survey.jsx'
+import {  Route, Routes } from 'react-router-dom';
+import SurveyComponent from '../Components/Survey';
+import TestComponent from '../Components/Test';
 export default function Main() {
     return (
         <div>
@@ -12,22 +14,19 @@ export default function Main() {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Home</a>
+                                <a className="nav-link" aria-current="page" href="/">Home</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Features</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Pricing</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link disabled">Disabled</a>
+                                <a className="nav-link" href="/survey">Survey</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
-            <Survey/>
+                <Routes>
+                    <Route path="/" element={<TestComponent/>} />
+                    <Route path="/survey" element={<SurveyComponent />} />
+                </Routes>
         </div>
     );
 }
