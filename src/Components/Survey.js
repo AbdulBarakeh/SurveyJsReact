@@ -9,7 +9,10 @@ function SurveyComponent() {
         console.log(JSON.stringify(sender.data, null, 3));
         console.log(options);
     });
-    return (<Survey model={survey} />);
+    return (
+    <div style={{"backgroundColor":"blue"}}>
+        <Survey model={survey} />
+    </div>);
 }
 
 export default SurveyComponent;
